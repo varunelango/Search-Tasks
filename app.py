@@ -18,7 +18,7 @@ def api_root():
 @app.route('/search/<Term>') 
 def search_term(Term):
 	h = httplib2.Http(".cache")
-	url = "https://api.flickr.com/services/rest/?method=flickr.photos.search&api_key=8b4a7b0052eeaa71085f333e84195ce3&text="+Term+"&format=json&nojsoncallback=1"
+	url = "https://api.flickr.com/services/rest/?method=flickr.photos.search&api_key=1866f9000b8e4c521ebde11a29b34be7&text="+Term+"&format=json&nojsoncallback=1"
 	(resp_headers, content) = h.request(url, "GET")
 	return content
 
@@ -28,7 +28,7 @@ def search_term_limit(Term,limit):
 	h = httplib2.Http(".cache")
 	if limit < 1 :
 		limit = 1
-	url = "https://api.flickr.com/services/rest/?method=flickr.photos.search&api_key=8b4a7b0052eeaa71085f333e84195ce3&text="+Term+"&per_page="+limit+"&format=json&nojsoncallback=1"
+	url = "https://api.flickr.com/services/rest/?method=flickr.photos.search&api_key=1866f9000b8e4c521ebde11a29b34be7&text="+Term+"&per_page="+limit+"&format=json&nojsoncallback=1"
 	(resp_headers, content) = h.request(url, "GET")
 	return content
 
@@ -38,7 +38,7 @@ def search_limit_page(Term,limit):
 	h = httplib2.Http(".cache")
 	if limit < 1 :
 		limit = 1
-	url = "https://api.flickr.com/services/rest/?method=flickr.photos.search&api_key=8b4a7b0052eeaa71085f333e84195ce3&text="+Term+"&per_page="+limit+"&page=1&format=json&nojsoncallback=1"
+	url = "https://api.flickr.com/services/rest/?method=flickr.photos.search&api_key=1866f9000b8e4c521ebde11a29b34be7&text="+Term+"&per_page="+limit+"&page=1&format=json&nojsoncallback=1"
 	(resp_headers, content) = h.request(url, "GET")
 	return content
 
