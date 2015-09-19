@@ -19,43 +19,11 @@ Setup
 
 I suggest first creating a virtual environment via [virtualenv](https://virtualenv.pypa.io/en/latest/) before installing the below requirements. Otherwise, they'll be installed globally. 
 
-Anyways, to install the pip modules run:
-
-```bash
-$ sudo python setup.py install
-```
-This will also create a build package.
-
-Then, to run the app on port 5000 (default), type:
+To run the app on port 5000 (default), type:
 
 ```bash
 $ python app.py
 ```
-
-This will default the log output to the `dam.log` file. You can also pass the following args:
-
-```bash 
-$ python app.py stream  # This outputs to the sys.stdout (terminal)
-```
-
-**OR**
-
-```bash 
-$ python app.py file    # This outputs to the log file 
-```
-
-You can also make this an exectuable via:
-
-```bash 
-$ chmod +x app.py
-```
-
-And run it via:
-
-```bash 
-./app.py
-```
-
 
 API Documentation
 =======
@@ -63,7 +31,7 @@ API Documentation
 All of the API route (Flask) implementations can be found in the `app.py` file.
 
 ---
-### GET Catalog
+### GET Photos
 ---
 
 Returns a JSON which has all the photo information related to the particular search term from Flickr.
@@ -114,7 +82,7 @@ Returns a JSON which has all the photo information related to the particular sea
   ```
 
 ---
-### GET Catalog by Key
+### GET Photos by limit
 ---
 
 Returns a JSON which has all the photo information for a particular term with a specified limit on the number of photos.
@@ -168,14 +136,14 @@ curl -H "Content-Type: application/json" http://localhost:5000/search/tiger/2
 
 
 ---
-### GET Catalog by Key
+### GET photos by limit and page
 ---
 
-Returns a JSON which has all the photo information for a particular term with a specified limit on the number of photos in the specified number of pages. Here we have set the default number of page to one
+Returns a JSON which has all the photo information for a particular term with a specified limit on the number of photos in the specified number of pages. Here we have set the default number of page to 1
 
 * **URL**
 
-`/search/<term>/<limit>/page
+`/search/<term>/<limit>/page`
 
 * **Method:**
 
