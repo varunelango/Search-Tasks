@@ -218,4 +218,4 @@ None
 * **Sample Call:**
 
 ```bash
-curl -H "Content-Type: application/json" http://localhost:5000/search/tiger/2
+curl -H "Content-Type: application/json" http://localhost:5000/search/tiger/2/page
