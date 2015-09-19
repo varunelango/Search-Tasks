@@ -14,7 +14,7 @@ app = Flask(__name__)
 @app.route('/')
 def api_root():
     return 'Welcome'
-# Receive search term and hits the flikr search api returning a JSON
+# Receive search term and hits the flickr search api returning a JSON
 @app.route('/search/<Term>') 
 def search_term(Term):
 	h = httplib2.Http(".cache")
@@ -22,7 +22,7 @@ def search_term(Term):
 	(resp_headers, content) = h.request(url, "GET")
 	return content
 
-#Receive search term and limit as params and hits the flikr api returning a JSON
+#Receive search term and limit as params and hits the flickr api returning a JSON
 @app.route('/search/<Term>/<limit>')
 def search_term_limit(Term,limit):
 	h = httplib2.Http(".cache")
@@ -32,7 +32,7 @@ def search_term_limit(Term,limit):
 	(resp_headers, content) = h.request(url, "GET")
 	return content
 
-# Receive search term,limit as params , sets page defaults to 1 amd hits the flikr api returning a valid JSON
+# Receive search term,limit as params , sets page defaults to 1 amd hits the flickr api returning a valid JSON
 @app.route('/search/<Term>/<limit>/page')
 def search_limit_page(Term,limit):
 	h = httplib2.Http(".cache")
