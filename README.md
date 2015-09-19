@@ -1,4 +1,3 @@
-# DAM-Backend
 
 A lightweight RESTful API for searching photos in Flickr.
 
